@@ -1,1 +1,1575 @@
-x hr
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Home Appliances | Smart Living Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset & Base Styles */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f8fafc;
+            --dark: #1e293b;
+            --light: #ffffff;
+            --gray: #64748b;
+            --light-gray: #f1f5f9;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --transition: all 0.3s ease;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --rounded-sm: 0.25rem;
+            --rounded: 0.5rem;
+            --rounded-lg: 0.75rem;
+            --rounded-xl: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--secondary);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: var(--rounded);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            gap: 8px;
+            box-shadow: var(--shadow);
+        }
+        .btn1 {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: var(--rounded);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            gap: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-description {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--light);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo i {
+            font-size: 1.5rem;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-icons i {
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-icons i:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .cart-count {
+            position: relative;
+        }
+
+        .cart-count span {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--secondary), transparent);
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Featured Categories */
+        .featured-categories {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .category-card {
+            background-color: var(--light);
+            border-radius: var(--rounded-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-img img {
+            transform: scale(1.1);
+        }
+
+        .category-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .category-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Popular Products */
+        .popular-products {
+            padding: 100px 0;
+            background-color: var(--secondary);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background-color: var(--light);
+            border-radius: var(--rounded-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 5px 10px;
+            border-radius: var(--rounded-sm);
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        .product-badge.sale {
+            background-color: var(--error);
+        }
+
+        .product-badge.new {
+            background-color: var(--success);
+        }
+
+        .product-badge.hot {
+            background-color: var(--warning);
+        }
+
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-actions {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-actions {
+            opacity: 1;
+        }
+
+        .product-actions button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light);
+            color: var(--dark);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .product-actions button:hover {
+            background-color: var(--primary);
+            color: var(--light);
+            transform: translateY(-3px);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .product-rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+
+        .product-rating span {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-left: 5px;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .old-price {
+            font-size: 1rem;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: var(--rounded-sm);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 25px;
+            border-radius: var(--rounded-lg);
+            transition: var(--transition);
+            background-color: var(--light);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--light-gray);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--secondary);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, var(--light), transparent);
+            z-index: 1;
+        }
+
+        .testimonials::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--light), transparent);
+            z-index: 1;
+        }
+
+        .testimonials-slider {
+            position: relative;
+            overflow: hidden;
+            padding: 40px 0;
+        }
+
+        .testimonials-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .testimonial-content {
+            background-color: var(--light);
+            border-radius: var(--rounded-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            text-align: center;
+        }
+
+        .testimonial-content::before {
+            content: '\201C';
+            font-family: Georgia, serif;
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 3px solid var(--primary);
+        }
+
+        .testimonial-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-author {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .testimonial-role {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .slider-control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-control.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 80px 0;
+            background-color: var(--primary);
+            color: var(--light);
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: var(--rounded-sm) 0 0 var(--rounded-sm);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+            background-color: var(--dark);
+            color: var(--light);
+            border: none;
+            border-radius: 0 var(--rounded-sm) var(--rounded-sm) 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #0f172a;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 0 0;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-about {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--light);
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            opacity: 0.8;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links ul li a:hover {
+            opacity: 1;
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact i {
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .footer-bottom i {
+            color: var(--error);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--light);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 40px 20px;
+                box-shadow: var(--shadow-lg);
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .testimonial-content {
+                padding: 30px 20px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: var(--rounded-sm);
+                width: 100%;
+            }
+
+            .newsletter-form input {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 600px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-about {
+                max-width: 100%;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        .slide-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-home"></i>
+                Modern<span>Home</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-icons">
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+                <a href="#" class="cart-count">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCounter">0</span>
+                </a>
+            </div>
+            
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Smart Appliances for Modern Living</h1>
+                <p>Discover our premium collection of home appliances designed to make your life easier, smarter, and more comfortable.</p>
+                <div class="hero-btns">
+                    <a href="#products" class="btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Shop Now
+                    </a>
+                    <a href="#categories" class="btn1">
+                        <i class="fas fa-compass"></i>
+                        Explore
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories" id="categories">
+        <div class="container">
+            <h2 class="section-title text-center slide-up">Shop by Category</h2>
+            <p class="text-center section-description slide-up delay-1">Browse our wide range of home appliance categories to find exactly what you need for your modern home.</p>
+            
+            <div class="categories-grid">
+                <div class="category-card slide-up delay-1">
+                    <div class="category-img">
+                        <img src="https://t3.ftcdn.net/jpg/03/65/81/02/360_F_365810231_cYeju5TPxuyYPtvbEJa9Nliv1JQJrByK.jpg" alt="Kitchen Appliances">
+                    </div>
+                    <div class="category-info">
+                        <h3>Kitchen Appliances</h3>
+                        <p>Smart refrigerators, ovens, microwaves and more for your modern kitchen.</p>
+                        <a href="#" class="btn btn-outline">View Products</a>
+                    </div>
+                </div>
+                
+                <div class="category-card slide-up delay-2">
+                    <div class="category-img">
+                        <img src="https://ecovacsindia.in/images/deebot-n30-pro-omni/Thumbnil/DEEBOT-N30-OMNI-Black-04.webp" alt="Cleaning Appliances">
+                    </div>
+                    <div class="category-info">
+                        <h3>Cleaning Appliances</h3>
+                        <p>Robot vacuums, steam cleaners and other smart cleaning solutions.</p>
+                        <a href="#" class="btn btn-outline">View Products</a>
+                    </div>
+                </div>
+                
+                <div class="category-card slide-up delay-1">
+                    <div class="category-img">
+                        <img src="https://glenindia.com/cdn/shop/collections/Air_Fryers_3040_DSS.jpg?v=1743399166" alt="Cooking Appliances">
+                    </div>
+                    <div class="category-info">
+                        <h3>Cooking Appliances</h3>
+                        <p>Air fryers, induction cookers and other innovative cooking devices.</p>
+                        <a href="#" class="btn btn-outline">View Products</a>
+                    </div>
+                </div>
+                
+                <div class="category-card slide-up delay-2">
+                    <div class="category-img">
+                        <img src="https://shop.haierindia.com/blog/wp-content/uploads/2024/12/Enhance-Your-LED-TV-Sound-1116x628.jpg.webp" alt="Entertainment">
+                    </div>
+                    <div class="category-info">
+                        <h3>Entertainment</h3>
+                        <p>Smart TVs, sound systems and home theater solutions.</p>
+                        <a href="#" class="btn btn-outline">View Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Products -->
+    <section class="popular-products" id="products">
+        <div class="container">
+            <h2 class="section-title text-center slide-up">Popular Products</h2>
+            <p class="text-center section-description slide-up delay-1">Browse our best-selling home appliances loved by thousands of customers.</p>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card slide-up delay-1">
+                    <div class="product-badge new">NEW</div>
+                    <div class="product-img">
+                        <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/refrigerator-new/e/q/z/-original-imagpfp6whbhsfxq.jpeg?q=90&crop=false" alt="Smart Refrigerator">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" data-id="1"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn" data-id="1"><i class="far fa-eye"></i></button>
+                            <button class="compare-btn" data-id="1"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Smart Refrigerator</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(24)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$1,299</span>
+                            <span class="old-price">$1,499</span>
+                        </div>
+                        <button class="add-to-cart" data-id="1">
+                            <i class="fas fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card slide-up delay-2">
+                    <div class="product-badge sale">SALE</div>
+                    <div class="product-img">
+                        <img src="https://thumbs.dreamstime.com/b/smart-home-robot-vacuum-cleaner-modern-interior-ai-generated-assistant-device-dark-living-room-278071893.jpg" alt="Robot Vacuum">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" data-id="2"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn" data-id="2"><i class="far fa-eye"></i></button>
+                            <button class="compare-btn" data-id="2"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Robot Vacuum</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(42)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$349</span>
+                            <span class="old-price">$399</span>
+                        </div>
+                        <button class="add-to-cart" data-id="2">
+                            <i class="fas fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card slide-up delay-1">
+                    <div class="product-badge hot">HOT</div>
+                    <div class="product-img">
+                        <img src="https://www.shutterstock.com/image-photo/sleek-black-air-fryer-sits-600nw-2502312481.jpg" alt="Air Fryer">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" data-id="3"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn" data-id="3"><i class="far fa-eye"></i></button>
+                            <button class="compare-btn" data-id="3"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Smart Air Fryer</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(67)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$129</span>
+                            <span class="old-price">$149</span>
+                        </div>
+                        <button class="add-to-cart" data-id="3">
+                            <i class="fas fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card slide-up delay-2">
+                    <div class="product-img">
+                        <img src="https://cdn.thewirecutter.com/wp-content/media/2024/11/espressomachines-2048px-9189.jpg?auto=webp&quality=75&width=1024" alt="Coffee Maker">
+                        <div class="product-actions">
+                            <button class="wishlist-btn" data-id="4"><i class="far fa-heart"></i></button>
+                            <button class="quick-view-btn" data-id="4"><i class="far fa-eye"></i></button>
+                            <button class="compare-btn" data-id="4"><i class="fas fa-exchange-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Smart Coffee Maker</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(38)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$199</span>
+                        </div>
+                        <button class="add-to-cart" data-id="4">
+                            <i class="fas fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="#" class="btn slide-up delay-3">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title text-center slide-up">Why Choose Us</h2>
+            <p class="text-center section-description slide-up delay-1">We provide the best home appliances with premium quality and innovative features.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card slide-up delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>2-Year Warranty</h3>
+                    <p>All our products come with a comprehensive 2-year warranty for your peace of mind.</p>
+                </div>
+                
+                <div class="feature-card slide-up delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Free Shipping</h3>
+                    <p>Enjoy free shipping on all orders over $100 across the continental US.</p>
+                </div>
+                
+                <div class="feature-card slide-up delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>30-Day Returns</h3>
+                    <p>Not satisfied? Return within 30 days for a full refund, no questions asked.</p>
+                </div>
+                
+                <div class="feature-card slide-up delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our customer service team is available round the clock to assist you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title text-center slide-up">Customer Reviews</h2>
+            <p class="text-center section-description slide-up delay-1">Hear what our customers say about our products and services.</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonials-container" id="testimonialsContainer">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-img">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson">
+                            </div>
+                            <p class="testimonial-text">"The smart refrigerator has completely transformed my kitchen experience. The app integration makes grocery management so easy!"</p>
+                            <h4 class="testimonial-author">Sarah Johnson</h4>
+                            <p class="testimonial-role">Home Chef</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-img">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                            </div>
+                            <p class="testimonial-text">"I was skeptical about robot vacuums, but this one exceeded all my expectations. It handles my pet hair problem perfectly!"</p>
+                            <h4 class="testimonial-author">Michael Chen</h4>
+                            <p class="testimonial-role">Pet Owner</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="testimonial-img">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez">
+                            </div>
+                            <p class="testimonial-text">"The air fryer has helped me cook healthier meals for my family without sacrificing taste. It's become my most used kitchen appliance!"</p>
+                            <h4 class="testimonial-author">Emily Rodriguez</h4>
+                            <p class="testimonial-role">Busy Mom</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <div class="slider-control active" data-index="0"></div>
+                    <div class="slider-control" data-index="1"></div>
+                    <div class="slider-control" data-index="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2 class="slide-up">Subscribe to Our Newsletter</h2>
+            <p class="slide-up delay-1">Get the latest updates on new products, exclusive offers, and home appliance tips.</p>
+            <form class="newsletter-form slide-up delay-2">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        Modern<span>Home</span>
+                    </a>
+                    <p>We provide high-quality, innovative home appliances that make everyday life easier and more enjoyable.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Appliance Street, Tech City, TC 12345</p>
+                    <p><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@modernhome.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 ModernHome. All Rights Reserved. Made with <i class="fas fa-heart"></i> by ModernHome Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Testimonial Slider
+        const testimonialsContainer = document.getElementById('testimonialsContainer');
+        const sliderControls = document.querySelectorAll('.slider-control');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            testimonialsContainer.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Update controls
+            sliderControls.forEach(control => control.classList.remove('active'));
+            sliderControls[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+        
+        sliderControls.forEach(control => {
+            control.addEventListener('click', () => {
+                showSlide(parseInt(control.dataset.index));
+            });
+        });
+        
+        // Auto slide change
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % sliderControls.length;
+            showSlide(currentSlide);
+        }, 5000);
+        
+        // Add to Cart Functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cartCounter = document.getElementById('cartCounter');
+        let cartCount = 0;
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                cartCount++;
+                cartCounter.textContent = cartCount;
+                
+                // Add animation
+                button.innerHTML = '<i class="fas fa-check"></i> Added!';
+                button.style.backgroundColor = 'var(--success)';
+                
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-cart-plus"></i> Add to Cart';
+                    button.style.backgroundColor = 'var(--primary)';
+                }, 2000);
+            });
+        });
+        
+        // Wishlist Functionality
+        const wishlistButtons = document.querySelectorAll('.wishlist-btn');
+        
+        wishlistButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.innerHTML = button.innerHTML.includes('far') 
+                    ? '<i class="fas fa-heart"></i>' 
+                    : '<i class="far fa-heart"></i>';
+                
+                if (button.innerHTML.includes('fas')) {
+                    button.style.color = 'var(--error)';
+                } else {
+                    button.style.color = 'var(--dark)';
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.slide-up, .fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.animationPlayState = 'running';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
